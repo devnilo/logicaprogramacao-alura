@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<h3>Álcool ou Gasolina?</h3>
+
+<script>
+    var tanque = 40;
+    var caminhoComGasolina = 480;
+    var consumoDeGasolina = tanque / caminhoComGasolina;
+
+    // pesquisei a melhor forma para colocar o valor em decimal, o Math.round() estava dando resultado 0, então usei toFixed
+    document.write("O consumo de gasolina por KM é de " + consumoDeGasolina.toFixed(2) + " litros");
+    document.write("<br>");
+
+    var caminhoComAlcool = 300;
+    var consumoDeAlcool = tanque / caminhoComAlcool;
+
+    document.write("O consumo de alcool por KM é de " + consumoDeAlcool.toFixed(2) + " litros")
+    document.write("<br>");
+
+    // como eu tenho um pouco de conhecimento sobre o if, adicionei nesse desafio!
+    if (consumoDeGasolina <= consumoDeAlcool) {
+        document.write("<br>");
+        document.write("Use gasolina, pois o consumo é menor");
+    } 
+    if (consumoDeGasolina >= consumoDeAlcool) {
+        document.write("<br>");
+        document.write("Use alcool, pois o consumo é menor");
+        }
+</script>
