@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha(){
+        document.write("<br>");
+    }
+
+    function mostra(frase){
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaImc(peso, altura){
+        return peso / (altura * altura);
+    }
+
+    // calculando IMC versão 2
+
+    var nomeInformado = prompt("Informe seu nome")
+    var pesoInformado = prompt(nomeInformado + " Informe seu peso");
+    var alturaInformada = prompt(nomeInformado + " Informe sua altura");
+
+    var imc = calculaImc(pesoInformado, alturaInformada);
+
+    document.write(nomeInformado + " ,o calculo do seu IMC é de " + imc)
+
+    pulaLinha();
+    pulaLinha();
+
+    if (imc > 35){
+        mostra("Seu IMC está acima do recomendado, procure um médico")
+    }
+
+    if (imc < 18.5){
+        mostra("Seu IMC está abaixo do recomendado, procure um médico")
+    }
+
+// aqui o && foi usado para mostrar o resultado quando ele der um número MAIOR ou IGUAL(>=) a 18.6, e MENOR OU IGUAL(<=) a 34
+    if (imc >= 18.6 && imc <= 34){
+        mostra("Seu IMC está em dia, continue assim!")
+    }
+
+</script>
