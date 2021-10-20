@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+    pulaLinha();
+}
+
+// outra forma de repetir utilizando for
+
+var taboada = 1;
+var taboadaDesejada = parseInt(prompt("Digite a taboada que você deseja visualizar!"));
+
+// com while
+mostra("Taboada usando WHILE");
+
+while (taboada <= 10) {
+    mostra(taboada * taboadaDesejada);
+    taboada++; // o ++ na frente de taboada serve da mesma forma que ( taboada = taboada + 1 ), ele acrescenta 1 sempre
+}
+
+// A instrução for é dividida em três partes que são separadas por ponto e vírgula. A primeira é destinada a variável de incremento, 
+// a segundo à condição de repetição e a última ao incremento da variável de incremento.
+mostra("Taboada usando FOR");
+
+for (var taboada = 1; taboada <= 10; taboada++) {
+    mostra(taboada * taboadaDesejada);
+}
+
+
+
+
+</script>
