@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+    pulaLinha();
+}
+
+// aula 7 - repetir enquanto...
+
+var anoCopa = 1930
+// criarei uma var para o próprio usuário decidir em ate qual ano ele quer saber
+var limiteAno = parseInt(prompt("Digite um ano para saber de em quais anos foram as Copas do Mundo"));
+
+while(anoCopa <= limiteAno){
+    mostra("Teve copa em " + anoCopa);
+    anoCopa = anoCopa + 4;
+}
+
+</script>

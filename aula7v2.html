@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+    pulaLinha();
+}
+
+// Preparado(a) para um exercício que fará você quebrar a cabeça um pouquinho? Usando a instrução while imprima todos os números pares de 1 a 100 e ao final imprima a palavra "FIM". DICA: incremente o contador de dois em dois!
+
+var numerosPares = 2;
+var ultimoNumeroPar = 100;
+
+while(numerosPares <= ultimoNumeroPar){
+    mostra(numerosPares + " é um número par.")
+    numerosPares = numerosPares + 2;
+
+}
+
+mostra("Seus números pares de 0 a 100 foram mostrado") 
+
+// Que tal uma dificuldade um pouco maior? Imprima todos os números entre 30 e 40 (inclusive 30 e 40), porém os números 33 e 37 não devem ser impressos! No final escreva a palavra "FIM". Use o while para essa tarefa. DICA: o if pode ajudá-lo!
+
+var numeroTrinta = 30;
+var numeroFinal = 40;
+
+while(numeroTrinta <= numeroFinal){
+
+    if (numeroTrinta == 33) {
+        numeroTrinta = numeroTrinta + 1;
+
+    } if (numeroTrinta == 37){
+         numeroTrinta = numeroTrinta + 1;
+    } else {
+    mostra(numeroTrinta);
+    numeroTrinta = numeroTrinta + 1;
+    }
+}
+
+</script>
