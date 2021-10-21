@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+
+<h3>Estou pensando em um número entre 0 e 10</h3>
+
+<input/>
+<button>Tente acertar</button>
+
+<script>
+    var segredo = Math.round(Math.random() * 10);
+    var input = document.querySelector("input");
+
+    // aqui estou usando a função verifica para guardar o código e só ativar ele quando clicarem no botão "Tente acertar"
+    function verifica() {
+
+        if (input.value == segredo) {
+        alert("VOCÊ ACERTOU, TU É BRABO MEMO DOIDO");
+    } else {
+      alert("VOCÊ ERROU!!!!!!!!!!!");
+    };
+}
+    var button = document.querySelector("button");
+    button.onclick = verifica;
+
+</script>
