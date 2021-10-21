@@ -9,7 +9,7 @@
 <script>
     var segredo = Math.round(Math.random() * 10);
     var input = document.querySelector("input");
-
+    input.focus();
     // aqui estou usando a função verifica para guardar o código e só ativar ele quando clicarem no botão "Tente acertar"
     function verifica() {
 
@@ -17,7 +17,13 @@
         alert("VOCÊ ACERTOU, TU É BRABO MEMO DOIDO");
     } else {
       alert("VOCÊ ERROU!!!!!!!!!!!");
-    };
+    }
+
+// aqui o input.value limpa a caixa dps que você chuta um número, e o input.focus serve para focar na barra não precisando clicar
+// novamente para digitar o número denovo.
+
+    input.value = "";
+    input.focus();
 }
     var button = document.querySelector("button");
     button.onclick = verifica;
