@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+    document.write("<br>");
+    document.write("<br>");
+}
+
+function mostra(frase) {
+
+    document.write(frase);
+    pulaLinha();
+}
+
+// acumulando valores
+
+var totalFamiliares = parseInt(prompt("Digite a quantidade de familiares"));
+var numero = 1;
+var totalIdades = 0;
+
+while (numero <= totalFamiliares){
+    var idade = parseInt(prompt("Informe a idade do familiar"));
+    totalIdades = totalIdades + idade;
+    numero++;
+}
+
+var mediaIdades = totalIdades / totalFamiliares;
+mostra("A média de idade da sua familia é de " + mediaIdades);
+
+// desafio - crie um programa para karol que ajude ela controlar os gastos dos eventos
+
+var totalDeEventos = parseInt(prompt("Informe o total de eventos"));
+
+var contador = 1;
+var totalGastoComEventos = 0;
+
+while(contador <= totalDeEventos) {
+
+    var gasto = parseFloat(prompt("Informe total gasto com evento"));
+    totalGastoComEventos = totalGastoComEventos + gasto;
+    contador++;
+}
+
+var media = totalGastoComEventos / totalDeEventos;
+
+mostra("A média de gastos é " + media);
+
+
+</script>
