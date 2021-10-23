@@ -1,0 +1,86 @@
+<meta charset="UTF-8">
+
+
+<h3>Estou pensando em três números diferentes entre 1 e 10</h3>
+
+<input/>
+<button>Tente acertar</button>
+
+<script>
+
+function sorteiaNumero() {
+
+    return Math.round(Math.random() * 10);
+}
+
+function quantidadeNumero(quantidade) {
+
+    // irei criar uma variável com um nome que já existe, porém vale lembrar que quando você cria uma var dentro de function, ela só serve dentro do function
+    var segredos = [];
+
+    // esse var numero serve para eu saber quantos numeros ja foram sorteados
+    var numero = 1;
+
+    // dentro deste while será sorteado números aleatórios, e também esses números não vão se repetir
+    while (numero <= quantidade) {
+
+        var numeroAleatorio  = sorteiaNumero();
+
+        if (numeroAleatorio !== 0) { // este if a esquerda está servindo para não gerar o número 0, da para deixar fora do if o codigo abaixo, porém irá sortear o 0 junto com os outros numeros
+
+            var achouNumero = false;
+
+            for (var posicao = 0; posicao < segredos.length; posicao++) {
+
+                if (segredos[posicao] == numeroAleatorio) {
+                    achouNumero = true;
+                    break;
+                }
+            }
+            if (achouNumero == false){
+                segredos.push(numeroAleatorio);
+                numero++;
+            }   
+        }
+    }
+    return segredos;
+}
+    // aqui estou jogando a função quantidadeNumero, para ele me dar a quantidade que eu quero no caso eu coloquei 3
+    // lembrando que a function quantidadeNumero já está separando um número aleatório
+    var segredos = quantidadeNumero(3);
+
+    console.log(segredos);
+
+    var input = document.querySelector("input");
+    input.focus();
+
+    // aqui estou usando a função verifica para guardar o código e só ativar ele quando clicarem no botão "Tente acertar"
+    function verifica() {
+
+        var acertouMensagem = false;
+
+        // o segredos.lenght está dando o tamanho do seu array, assim você não precisa digitar que a (posicao < numero de dados do array)
+        for (posicao = 0; posicao < segredos.length; posicao++) {
+
+            if (input.value == segredos[posicao]) {
+                alert("VOCÊ ACERTOU, TU É BRABO MEMO DOIDO");
+                acertouMensagem = true;
+                break;
+            }
+        }
+
+        // aqui eu estou quebrando o código quando a pessoa erra, para não aparecer a mensagem de errou quando o javascript calcular cada um
+        if (acertouMensagem == false) {
+            alert("VOCÊ ERROU!! TENTE NOVAMENTE JEGUE")
+    }
+
+
+// aqui o input.value limpa a caixa dps que você chuta um número, e o input.focus serve para focar na barra não precisando clicar
+// novamente para digitar o número denovo.
+    input.value = "";
+    input.focus();
+}
+    var button = document.querySelector("button");
+    button.onclick = verifica;
+
+</script>
